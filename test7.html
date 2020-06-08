@@ -1,0 +1,143 @@
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.2/js/swiper.min.js"></script>
+<script src="/frontend/manifest.js?id=227795a4cf81cedbd601"></script>
+<script src="/frontend/vendor.js?id=fd379828ca3ba3ce9d7b"></script>
+<script src="/frontend/app.js?id=5cbc01292a9d0560033e"></script>
+<script>
+    function mouseOver(element, cardId) {
+        const markpoint = document.getElementById(`time-marker-${cardId}`)
+        const offset = window.innerWidth < 577 ? 25 : 50;
+
+        markpoint.style.top = element.offsetTop - offset + 'px'
+    }
+</script>
+<script>
+    function onFormDownloadClick(fileId) {
+        location.href = `media_download/${fileId}`
+    }
+</script>
+<script>
+    function onMessageFileDownloadClick(fileId) {
+        location.href = `media_download/${fileId}`
+    }
+
+</script>
+<script>
+    const name = document.getElementById('contact_name')
+    const email = document.getElementById('contact_email')
+    const phone = document.getElementById('contact_phone')
+    const mainContent = document.getElementById('contact_main_content')
+
+    const nameM = document.getElementById('contact_name_m')
+    const emailM = document.getElementById('contact_email_m')
+    const phoneM = document.getElementById('contact_phone_m')
+    const mainContentM = document.getElementById('contact_main_content_m')
+
+    document.getElementById('contact_us_send_btn').onclick = function (event) {
+        event.preventDefault();
+
+        axios.post(`/contact_us`, {
+            name: name.value,
+            email: email.value,
+            phone: phone.value,
+            main_content: mainContent.value
+        })
+            .then(respose => {
+                name.value = ''
+                email.value = ''
+                phone.value = ''
+                mainContent.value = ''
+                $('#formModal').modal('show')
+            }).catch(error => {
+                alert(error);
+            })
+    }
+
+    document.getElementById('contact_us_send_btn_m').onclick = function (event) {
+        event.preventDefault();
+
+        axios.post(`/contact_us`, {
+            name: nameM.value,
+            email: emailM.value,
+            phone: phoneM.value,
+            main_content: mainContentM.value
+        })
+            .then(respose => {
+                nameM.value = ''
+                emailM.value = ''
+                phoneM.value = ''
+                mainContentM.value = ''
+                console.log('success')
+                $('#formModal').modal('show')
+            }).catch(error => {
+                console.log('error')
+                alert(error);
+            })
+    }
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA_4YNT3_N2BZPn7ykTFokZx8jZW3hvANw&callback=initMap" async
+    defer></script>
+<script>
+    var tableMap
+
+    function initMap() {
+        tableMap = new google.maps.Map(document.getElementById('gooMapTable_jp'), {
+            center: {
+                lat: 35.658276,
+                lng: 139.728525
+            },
+            zoom: 18,
+            styles: [{
+                stylers: [{
+                    saturation: -100
+                },
+                {
+                    gamma: 0.8
+                },
+                {
+                    lightness: 4
+                },
+                {
+                    visibility: 'on'
+                }
+                ]
+            },
+            {
+                featureType: 'landscape.natural',
+                stylers: [{
+                    visibility: 'on'
+                },
+                {
+                    color: '#5dff00'
+                },
+                {
+                    gamma: 4.97
+                },
+                {
+                    lightness: -5
+                },
+                {
+                    saturation: 100
+                }
+                ]
+            }
+            ]
+        })
+
+        var marker = new google.maps.Marker({
+            position: {
+                lat: 35.658276,
+                lng: 139.728525
+            },
+            map: tableMap,
+            title: 'Unicorn Kids International School'
+        })
+
+        initMap2()
+    }
+
+
+    (window.webpackJsonp = window.webpackJsonp || []).push([[0], { 0: function (e, n, t) { t("yumJ"), t("K//o"), e.exports = t("hxge") }, "5eKV": function (e, n, t) { var o, i, a; function r(e) { return (r = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (e) { return typeof e } : function (e) { return e && "function" == typeof Symbol && e.constructor === Symbol && e !== Symbol.prototype ? "symbol" : typeof e })(e) } i = { expires: "1d", path: "; path=/" }, a = { install: function (e) { e.prototype.$cookies = this, e.cookies = this }, config: function (e, n) { e && (i.expires = e), n && (i.path = "; path=" + n) }, get: function (e) { var n = decodeURIComponent(document.cookie.replace(new RegExp("(?:(?:^|.*;)\\s*" + encodeURIComponent(e).replace(/[\-\.\+\*]/g, "\\$&") + "\\s*\\=\\s*([^;]*).*$)|^.*$"), "$1")) || null; if (n && "{" === n.substring(0, 1) && "}" === n.substring(n.length - 1, n.length)) try { n = JSON.parse(n) } catch (e) { return n } return n }, set: function (e, n, t, o, a, r) { if (!e) throw new Error("cookie name is not find in first argument"); if (/^(?:expires|max\-age|path|domain|secure)$/i.test(e)) throw new Error("cookie key name illegality ,Cannot be set to ['expires','max-age','path','domain','secure']\t", "current key name: " + e); n && n.constructor === Object && (n = JSON.stringify(n)); var s = "; max-age=86400"; if (t = t || i.expires) switch (t.constructor) { case Number: s = t === 1 / 0 || -1 === t ? "; expires=Fri, 31 Dec 9999 23:59:59 GMT" : "; max-age=" + t; break; case String: if (/^(?:\d{1,}(y|m|d|h|min|s))$/i.test(t)) { var c = t.replace(/^(\d{1,})(?:y|m|d|h|min|s)$/i, "$1"); switch (t.replace(/^(?:\d{1,})(y|m|d|h|min|s)$/i, "$1").toLowerCase()) { case "m": s = "; max-age=" + 2592e3 * +c; break; case "d": s = "; max-age=" + 86400 * +c; break; case "h": s = "; max-age=" + 3600 * +c; break; case "min": s = "; max-age=" + 60 * +c; break; case "s": s = "; max-age=" + c; break; case "y": s = "; max-age=" + 31104e3 * +c; break; default: new Error("unknown exception of 'set operation'") } } else s = "; expires=" + t; break; case Date: s = "; expires=" + t.toUTCString() }return document.cookie = encodeURIComponent(e) + "=" + encodeURIComponent(n) + s + (a ? "; domain=" + a : "") + (o ? "; path=" + o : i.path) + (r ? "; secure" : ""), this }, remove: function (e, n, t) { return !(!e || !this.isKey(e)) && (document.cookie = encodeURIComponent(e) + "=; expires=Thu, 01 Jan 1970 00:00:00 GMT" + (t ? "; domain=" + t : "") + (n ? "; path=" + n : i.path), this) }, isKey: function (e) { return new RegExp("(?:^|;\\s*)" + encodeURIComponent(e).replace(/[\-\.\+\*]/g, "\\$&") + "\\s*\\=").test(document.cookie) }, keys: function () { if (!document.cookie) return []; for (var e = document.cookie.replace(/((?:^|\s*;)[^\=]+)(?=;|$)|^\s*|\s*(?:\=[^;]*)?(?:\1|$)/g, "").split(/\s*(?:\=[^;]*)?;\s*/), n = 0; n < e.length; n++)e[n] = decodeURIComponent(e[n]); return e } }, "object" === r(n) ? e.exports = a : void 0 === (o = function () { return a }.apply(n, [])) || (e.exports = o), "undefined" != typeof window && (window.$cookies = a) }, "K//o": function (e, n) { AOS.init(), document.querySelectorAll("#indexModal a").forEach(function (e) { e.onclick = function () { $("#indexModal").modal("hide") } }), document.querySelectorAll("#phoneModal a").forEach(function (e) { e.onclick = function () { $("#phoneModal").modal("hide") } }); new Swiper(".swiper-cards-container", { loop: !0, slidesPerView: 2.05, centeredSlides: !0, spaceBetween: 0, pagination: { el: ".swiper-cards-pagination", clickable: !0 } }), new Swiper(".m-cards-container", { loop: !0, slidesPerView: 1.4, centeredSlides: !0, spaceBetween: 30, pagination: { el: ".m-cards-pagination", dynamicBullets: !0 } }); var t = new Swiper(".swiper-school-img", { slidesPerView: 1, spaceBetween: 20, loop: !0, navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" } }), o = new Swiper(".swiper-school-content", { slidesPerView: 1, loop: !0, pagination: { el: ".swiper-school-pagination", dynamicBullets: !0 }, navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" } }); o.on("slideNextTransitionStart", function () { t.slideNext(300) }), o.on("slidePrevTransitionStart", function () { t.slidePrev(300) }); var i = new Swiper(".swiper-school-img-min", { slidesPerView: 1, spaceBetween: 20, loop: !0, navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" } }), a = new Swiper(".swiper-school-content-min", { slidesPerView: 1, loop: !0, pagination: { el: ".swiper-school-pagination", dynamicBullets: !0 }, navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" } }); a.on("slideNextTransitionStart", function () { i.slideNext(300) }), a.on("slidePrevTransitionStart", function () { i.slidePrev(300) }); var r = new Swiper(".swiper-vertical-ball", { direction: "vertical", slidesPerView: 2.2, centeredSlides: !0, loop: !0, spaceBetween: 0, pagination: { el: ".swiper-vertical-pagination", dynamicBullets: !0, clickable: !0 } }), s = new Swiper(".swiper-vertical-content", { effect: "fade", slidesPerView: 1, centeredSlides: !0, loop: !0, spaceBetween: 0 }); r.on("slideChange", function () { s.slideToLoop(r.realIndex, 300) }); var c = new Swiper(".m-vertical-ball", { slidesPerView: 3.7, centeredSlides: !0, loop: !0, spaceBetween: 0 }), l = new Swiper(".m-vertical-content", { slidesPerView: 1, centeredSlides: !0, loop: !0, spaceBetween: 0, pagination: { el: ".m-vertical-content-pagination", dynamicBullets: !0, clickable: !0 } }); c.on("slideChange", function () { l.slideToLoop(c.realIndex, 300) }), l.on("slideChange", function () { c.slideToLoop(l.realIndex, 300) }); var p = new Swiper(".m-vertical-ball-min", { slidesPerView: 2.1, centeredSlides: !0, loop: !0, spaceBetween: 0 }), d = new Swiper(".m-vertical-content-min", { slidesPerView: 1, centeredSlides: !0, loop: !0, spaceBetween: 0, pagination: { el: ".m-vertical-content-pagination", dynamicBullets: !0, clickable: !0 } }); p.on("slideChange", function () { d.slideToLoop(p.realIndex, 300) }), d.on("slideChange", function () { p.slideToLoop(d.realIndex, 300) }); var u = []; $(".MessageReadMore").each(function () { $(this).on("shown.bs.modal", function () { var e = $(this).attr("id"); -1 === u.indexOf(e) && (new Swiper("#".concat(e, " .swiper-message-container"), { pagination: { el: "#".concat(e, " .swiper-message-pagination"), clickable: !0 } }), u.push(e)) }) }); new Swiper(".swiper-banner-container", { loop: !0, spaceBetween: 30, effect: "fade", pagination: { el: ".swiper-pagination", clickable: !0 }, navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" } }); var w = document.getElementById("navBar"); window.onscroll = function () { document.documentElement.scrollTop > 62 ? w.classList.add("fixed") : w.classList.remove("fixed") } }, "Rio/": function (e, n, t) { window._ = t("LvDl"); try { window.Popper = t("8L3F").default, window.$ = window.jQuery = t("EVdn"), t("SYky") } catch (e) { } window.axios = t("vDqi"), window.axios.defaults.headers.common["X-Requested-With"] = "XMLHttpRequest"; var o = document.head.querySelector('meta[name="csrf-token"]'); o ? window.axios.defaults.headers.common["X-CSRF-TOKEN"] = o.content : console.error("CSRF token not found: https://laravel.com/docs/csrf#csrf-x-csrf-token") }, hxge: function (e, n) { }, yumJ: function (e, n, t) { "use strict"; t.r(n); t("Rio/"); var o = t("XuX8"), i = t.n(o), a = t("5eKV"), r = t.n(a); window.Vue = i.a, i.a.use(r.a); new i.a({ el: "#app", data: { title: "About us", titlejp: "会社概要", lang: "en", srcContent: { en: { title: "Introduction" }, jp: { title: "はじめに" } } }, computed: { content: function () { return this.srcContent[this.lang] }, isEN: function () { return "en" === this.lang }, isJP: function () { return "jp" === this.lang } }, methods: { changeTitle: function () { for (var e = this, n = document.querySelectorAll(".dynamictitle"), t = [], o = 0; o < n.length; o++)t.push(n[o].offsetTop); console.log(t); var i = ["About us", "Class Introduction", "School Environment", "Admission Instructions", "Message Announcement", "Contact Us"], 
+    a = ["会社概要", "クラス紹介", "学校環境", "入学説明", "メッセージの報告", "お問い合わせ"]; 
+    
+    window.document.addEventListener("scroll", function (n) { for (var o = window.scrollY, r = 0; r < i.length; r++)t[r] <= o && (console.log(i[r]), e.title = i[r], e.titlejp = a[r]) }, !1) } }, mounted: function () { this.changeTitle() }, created: function () { "/jp" === window.location.pathname && (this.lang = "jp") } }) } }, [[0, 1, 2]]]);

@@ -1,0 +1,372 @@
+
+:root {
+    --color1: #FF7474;
+    --color2: #B8C0C9;
+    --color3: #FFB12A;
+    --color4: #707070;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+
+body {
+    margin: 0;
+    font-family: 'Oxygen', 'Noto Sans TC';
+}
+
+.leftbox {
+    display: inline-block;
+    width: 280px;
+    height: 100vh;
+    background-color: var(--color1);
+    color: white;
+    padding-top: 80px;
+    position: fixed;
+}
+
+.leftbox .pic {
+    height: 180px;
+    width: 180px;
+    border-radius: 80px;
+    background-color: white;
+    margin: auto;
+}
+
+.leftbox .title {
+    font-size: 30px;
+    width: 100%;
+    text-align: center;
+    margin-top: 18px;
+    font-weight: 900;
+    letter-spacing: 1.5px;
+}
+
+.worklink {
+    width: 100%;
+    text-align: center;
+    margin-top: 60px;
+    transition: 0.5s;
+}
+
+.leftbox .worklink a {
+    text-decoration: none;
+    color: white;
+    display: block;
+    font-size: 18px;
+    letter-spacing: 1px;
+    margin-bottom: 18px;
+}
+
+.worklink :hover {
+    font-weight: bolder;
+}
+
+.intro {
+    position: fixed;
+    left: 60px;
+    top: 560px;
+    width: 154px;
+    height: 40px;
+    border: solid white 1px;
+    font-size: 18px;
+    line-height: 40px;
+    margin: auto;
+    text-align: center;
+    color: white;
+    z-index: 110;
+    transition: 0.5s;
+}
+
+.is-opened-navi {
+    width: 280px;
+    height: 65px;
+    top: 548px;
+    left: -1px;
+    line-height: 65px;
+}
+
+.intro:hover {
+    background-color: white;
+    color: var(--color1);
+
+}
+
+.leftbox a {
+    text-decoration: none;
+}
+
+.social {
+    margin-top: 250px;
+    margin-left: 98px;
+}
+
+.sociallink {
+    width: 22px;
+    height: 22px;
+    background-color: white;
+    border-radius: 22px;
+    display: inline-block;
+    margin-right: 8.5px;
+}
+
+.bottomline {
+    width: 100px;
+    height: 2px;
+    background-color: white;
+    margin: auto;
+    margin-top: 11px;
+    margin-bottom: 11px;
+}
+
+.footertext {
+    width: 100%;
+    text-align: center;
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+
+/* 右邊的css */
+
+.rightbox {
+    width: calc(100% - 280px);
+    float: right;
+    background-color: rgb(228, 226, 222);
+    overflow: hidden;
+}
+
+.container {
+    max-width: 880px;
+    margin: auto;
+    margin-top: 80px;
+}
+
+.grid:after {
+    content: ' ';
+    display: block;
+    clear: both;
+}
+
+
+/* ---- grid-item ---- */
+.grid-item {
+    width: 420px;
+    min-height: 200px;
+    float: left;
+    overflow: hidden;
+}
+
+
+.intropic {
+    width: 420px;
+    height: 320px;
+    background-color: rgb(177, 175, 175);
+    margin-left: 18px;
+    transition: 0.5s;
+    border-bottom: var(--color1) 0px solid;
+}
+
+.intropic:hover {
+    border-bottom: var(--color1) 20px solid;
+}
+
+.smalltitle {
+    font-size: 16px;
+    font-weight: bolder;
+    letter-spacing: 1px;
+    color: var(--color1);
+    margin-top: 15px;
+    margin-left: 18px;
+}
+
+.smalltitle2 {
+    color: var(--color2);
+}
+
+.smalltitle3 {
+    color: var(--color3);
+}
+
+.smalltext {
+    font-size: 14px;
+    color: var(--color4);
+    margin-top: 5px;
+    margin-bottom: 40px;
+    margin-left: 18px;
+}
+
+.picsize2 {
+    height: 480px;
+}
+
+.picsize3 {
+    height: 290px;
+}
+
+.picsize4 {
+    height: 456px;
+}
+
+.picsize5 {
+    height: 230px;
+}
+
+.picsize6 {
+    height: 263px;
+}
+
+.picsize7 {
+    height: 500px;
+}
+
+.picsize8 {
+    height: 260px;
+}
+
+.picsize9 {
+    height: 260px;
+}
+
+.picsize10 {
+    height: 325px;
+}
+
+.picsize11 {
+    height: 400px;
+}
+
+.picsize12 {
+    height: 312px;
+}
+
+.menuintro {
+
+    margin: 0 auto;
+    height: 440px;
+    overflow: hidden;
+}
+
+.menuleft {
+    display: inline-block;
+    width: 282px;
+    height: 100%;
+
+}
+
+.menupic {
+    width: 282px;
+    height: 318px;
+    border-bottom-left-radius: 110px;
+    background-color: white;
+}
+
+.menulefttext {
+    font-size: 22px;
+    color: white;
+    display: block;
+    text-align: right;
+    margin-top: 70px;
+}
+
+.menuleftbottom {
+    width: 282px;
+}
+
+.sociallinktiny {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    background-color: white;
+    margin-top: 12px;
+    margin-left: 8px;
+}
+
+
+.menuright {
+    display: inline-block;
+    margin-left: 90px;
+    width: 610px;
+    height: 100%;
+}
+
+.menuright .name {
+    font-size: 22px;
+    color: white;
+    letter-spacing: 1px;
+}
+
+.menuright .textbig {
+    font-size: 16px;
+    letter-spacing: 2px;
+    color: white;
+    line-height: 30px;
+    margin-top: 22px;
+}
+
+.menuright .textsmall {
+    font-size: 14px;
+    letter-spacing: 3px;
+    color: white;
+    line-height: 28px;
+    font-weight: 100;
+    margin-top: 32px;
+}
+
+.softwarefooter span {
+    font-size: 20px;
+    color: white;
+    display: block;
+    margin-top: 34px;
+}
+
+.software {
+    width: 50px;
+    height: 50px;
+    background-color: white;
+    display: inline-block;
+    margin-top: 20px;
+    margin-right: 12px;
+}
+
+
+/* 切頁動畫 */
+
+@keyframes fadeinup {
+    0% {
+        opacity: 0;
+        transform: translate3d(0, 100%, 0);
+    }
+
+    100% {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+@keyframes fadeinright {
+    0% {
+        opacity: 0;
+        transform: translate3d(100%, 0, 0);
+    }
+
+    100% {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+.m-scene .scene-element {
+    animation-duration: 0.25s;
+    transition-timing-function: ease-in;
+    animation-fill-mode: both;
+}
+
+.m-scene .scene-element--fadeinup {
+    animation-name: fadeinup;
+}
+
+.m-scene .scene-element--fadeinright {
+    animation-name: fadeinright;
+}

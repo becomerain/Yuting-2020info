@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 300px;
+            height: 400px;
+            
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box" id="box">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nemo reprehenderit quia exercitationem magni quae
+        pariatur totam aut, reiciendis esse, sapiente a ea debitis accusamus excepturi. Veniam dignissimos doloremque
+        dolores voluptate impedit laborum. Quo, fuga incidunt. Quisquam illum, sit dolorem non doloribus voluptatum
+        maiores molestias, commodi blanditiis voluptatem sapiente officiis eum, consequuntur harum ab. Maxime odit
+        nihil nam sint? Quod voluptatem eaque eligendi sapiente, facilis unde modi laborum iste enim excepturi
+        distinctio iusto placeat, inventore totam, porro doloremque facere soluta quam ad beatae magni. Beatae officia
+        maxime nulla veniam cumque a eum debitis, nisi impedit minus minima dicta tempore similique laboriosam animi
+        deserunt neque, dolore molestiae quibusdam at cupiditate. Blanditiis quis suscipit magnam accusamus atque,
+        optio veniam. Accusantium laboriosam asperiores dolore dignissimos architecto totam dolor nam ut amet officia
+        eveniet corrupti, ex, provident animi recusandae iste inventore libero, tempore fugiat nesciunt soluta eum!
+        Mollitia perferendis itaque amet tempora, aliquid ipsum, voluptas impedit at deserunt, quam deleniti veniam
+        temporibus veritatis eligendi consectetur ut culpa optio sapiente quidem ratione! Id voluptates enim totam
+        incidunt veritatis unde autem qui minus repudiandae non laborum fugit, voluptatem in nisi, provident vero quos
+        eaque vitae praesentium. Sint nisi numquam, accusamus eum consequatur molestiae cum minus repudiandae
+        consectetur veniam nulla aliquam ullam rem earum, nemo eveniet molestias. Veritatis reiciendis et quo facilis
+        voluptatem. Error sapiente aperiam adipisci numquam. Facilis aut, voluptatum vitae omnis suscipit quo eaque
+        maxime nulla ad porro corrupti mollitia optio et ex? Nesciunt libero officia neque quasi delectus molestiae
+        eaque, nam dolores animi ullam quos blanditiis suscipit ipsam distinctio ut sed cupiditate sequi odio.
+        Architecto, eum accusantium! Ad, porro. Id exercitationem totam rerum blanditiis rem nam! Obcaecati, tenetur!
+        Quos nam non ipsam, vitae laboriosam unde aliquid omnis minima totam saepe vel quae aperiam ipsa vero
+        distinctio. Ad nesciunt quasi vero, ratione eaque sunt mollitia culpa. Deleniti, sapiente officiis dolorum
+        accusamus voluptas magni, corrupti iste at libero architecto alias quae, necessitatibus voluptatum dolor hic
+        veniam voluptates! Odio tempora officiis deserunt voluptatibus fuga autem vero natus provident maxime sed, et
+        earum esse aliquid veniam ea tenetur corporis voluptates aperiam iure? Quaerat tempore sunt repellat illo
+        quidem, aliquam in, voluptatem rem, maxime repudiandae deserunt amet quia. Impedit, maxime et minus quaerat
+        accusantium perferendis tempore ea nesciunt cum. Nobis saepe odit facilis pariatur rem, adipisci delectus
+        corrupti autem quos harum voluptas quam quia unde aperiam recusandae alias! Cumque saepe laboriosam, esse eum,
+        recusandae rem sequi ratione voluptates adipisci repellat veritatis ea atque distinctio tempora facilis
+        incidunt facere tempore repudiandae similique magni eligendi! Voluptatem saepe recusandae vel adipisci illo
+        architecto voluptas ullam necessitatibus non neque? Quis aliquam laboriosam magni exercitationem repellat qui
+        ipsam ducimus aliquid quam provident, laborum numquam vitae iste facere facilis nemo, quibusdam nostrum
+        pariatur dolorem. Sed, asperiores incidunt? Laborum, quis laudantium. Repellat fuga qui architecto quis id
+        tempora enim in ut possimus quas soluta neque sed veritatis molestias vel dolorum, beatae doloribus?
+        Voluptatibus, eum doloribus deleniti ab molestias temporibus impedit facere iure quaerat iusto quia in soluta
+        dolorem autem dicta? Praesentium consectetur iure, eum quidem accusantium voluptate.
+    </div>
+
+    <script>
+        let box = document.querySelector("#box")
+
+        window.onscroll = function () {
+            let scrolltop = document.documentElement.scrollTop;
+            console.log(scrolltop);
+            if (scrolltop>200) {
+                box.style.fontSize = "20px"
+                box.style.fontWeight = 900;
+            }
+            else {
+                box.style.fontSize = "14px"
+                box.style.fontWeight = 300;
+            }
+
+
+        }
+
+
+    </script>
+</body>
+
+</html>

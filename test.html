@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="css/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="css/demo.css" />
+    <script>document.documentElement.className = 'js';</script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://masonry.desandro.com/masonry.pkgd.js"></script>
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+
+        .container {
+            display: none;
+            max-width: 885px;
+        }
+
+        .grid:after {
+            content: ' ';
+            display: block;
+            clear: both;
+        }
+
+
+        /* ---- grid-item ---- */
+        .grid-item {
+            width: 420px;
+            min-height: 200px;
+            float: left;
+            border: 2px solid #333;
+            border-radius: 5px;
+            overflow: hidden
+        }
+
+
+
+        .clickhere{
+            border: solid 1px;
+            width: 200px;
+            height: 50px;
+            z-index: 99;
+        }
+
+
+    </style>
+
+
+</head>
+
+<body class="demo-6">
+
+    <div class="clickhere hamburger hamburger--demo-6">test</div>
+    <main class="main main--demo-6">
+        <div class="content content--demo-6">
+
+            <div class="demo-title demo-title--demo-6">Visualize</div>
+            <div class="global-menu">
+                <div class="global-menu__wrap">
+                    <a class="global-menu__item global-menu__item--demo-6" href="#">Data Science</a>
+                    <a class="global-menu__item global-menu__item--demo-6" href="#">Research</a>
+                    <a class="global-menu__item global-menu__item--demo-6" href="#">Case Studies</a>
+                    <a class="global-menu__item global-menu__item--demo-6" href="#">Contact</a>
+                </div>
+            </div>
+            <svg class="shape-overlays" viewBox="0 0 100 100" preserveAspectRatio="none">
+                <defs>
+                    <linearGradient id="gradient1" x1="0%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%" stop-color="#00c99b" />
+                        <stop offset="100%" stop-color="#ff0ea1" />
+                    </linearGradient>
+                    <linearGradient id="gradient2" x1="0%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%" stop-color="#ffd392" />
+                        <stop offset="100%" stop-color="#ff3898" />
+                    </linearGradient>
+                    <linearGradient id="gradient3" x1="0%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%" stop-color="#110046" />
+                        <stop offset="100%" stop-color="#32004a" />
+                    </linearGradient>
+                </defs>
+                <path class="shape-overlays__path"></path>
+                <path class="shape-overlays__path"></path>
+                <path class="shape-overlays__path"></path>
+            </svg>
+        </div>
+    </main>
+    <script src="js/demo.js"></script>
+    <script src="js/easings.js"></script>
+    <script src="js/demo6.js"></script>
+
+
+
+
+    <div class="container">
+        <div class="grid">
+            <div class="grid-item">1</div>
+            <div class="grid-item">2</div>
+            <div class="grid-item">3</div>
+            <div class="grid-item">4</div>
+            <div class="grid-item">5</div>
+            <div class="grid-item">6</div>
+            <div class="grid-item">7</div>
+        </div>
+    </div>
+
+    <script>
+        $('.grid').masonry({
+
+            itemSelector: '.grid-item',
+            columnWidth: 420
+
+        });
+    </script>
+</body>
+
+</html>

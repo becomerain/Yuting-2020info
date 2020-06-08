@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Oxygen" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://masonry.desandro.com/masonry.pkgd.js"></script>
+
+    <!-- test -->
+    <link rel="stylesheet" type="text/css" href="css/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="css/demo.css" />
+
+    <!-- test -->
+
+    <title>Document</title>
+    <style>
+        :root {
+            --color1: #FF7474;
+            --color2: #B8C0C9;
+            --color3: #FFB12A;
+            --color4: #707070;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+
+        body {
+            margin: 0;
+            font-family: 'Oxygen', 'Noto Sans TC';
+        }
+
+        .leftbox {
+            display: inline-block;
+            width: 280px;
+            height: 100vh;
+            background-color: var(--color1);
+            color: white;
+            padding-top: 80px;
+            position: fixed;
+        }
+
+        .leftbox .pic {
+            height: 180px;
+            width: 180px;
+            border-radius: 80px;
+            background-color: white;
+            margin: auto;
+        }
+
+        .leftbox .title {
+            font-size: 30px;
+            width: 100%;
+            text-align: center;
+            margin-top: 18px;
+            font-weight: 900;
+            letter-spacing: 1.5px;
+        }
+
+        .worklink {
+            width: 100%;
+            text-align: center;
+            margin-top: 60px;
+            transition: 0.5s;
+        }
+
+        .leftbox .worklink a {
+            text-decoration: none;
+            color: white;
+            display: block;
+            font-size: 18px;
+            letter-spacing: 1px;
+            margin-bottom: 18px;
+        }
+
+        .worklink :hover {
+            font-weight: bolder;
+        }
+
+        .intro {
+            position: fixed;
+            left: 60px;
+            top: 560px;
+            width: 154px;
+            height: 40px;
+            border: solid white 1px;
+            font-size: 18px;
+            line-height: 40px;
+            margin: auto;
+            text-align: center;
+            color: white;
+            z-index: 110;
+            transition: 0.5s;
+        }
+
+        .is-opened-navi {
+            width: 280px;
+            height: 65px;
+            top: 548px;
+            left: -1px;
+            line-height: 65px;
+        }
+
+        .intro:hover {
+            background-color: white;
+            color: var(--color1);
+
+        }
+
+        .leftbox a {
+            text-decoration: none;
+        }
+
+        .social {
+            margin-top: 250px;
+            margin-left: 98px;
+        }
+
+        .sociallink {
+            width: 22px;
+            height: 22px;
+            background-color: white;
+            border-radius: 22px;
+            display: inline-block;
+            margin-right: 8.5px;
+        }
+
+        .bottomline {
+            width: 100px;
+            height: 2px;
+            background-color: white;
+            margin: auto;
+            margin-top: 11px;
+            margin-bottom: 11px;
+        }
+
+        .footertext {
+            width: 100%;
+            text-align: center;
+            font-size: 12px;
+            letter-spacing: 1px;
+        }
+
+        /* 右邊的css */
+
+        .rightbox {
+            width: calc(100% - 280px);
+            float: right;
+            background-color: rgb(228, 226, 222);
+            overflow: hidden;
+        }
+
+        .container {
+            max-width: 880px;
+            margin: auto;
+            margin-top: 80px;
+        }
+
+        .grid:after {
+            content: ' ';
+            display: block;
+            clear: both;
+        }
+
+
+        /* ---- grid-item ---- */
+        .grid-item {
+            width: 420px;
+            min-height: 200px;
+            float: left;
+            overflow: hidden;
+        }
+
+
+        .intropic {
+            width: 420px;
+            height: 320px;
+            background-color: rgb(177, 175, 175);
+            margin-left: 18px;
+            transition: 0.5s;
+            border-bottom: var(--color1) 0px solid;
+        }
+
+        .intropic:hover {
+            border-bottom: var(--color1) 20px solid;
+        }
+
+        .smalltitle {
+            font-size: 16px;
+            font-weight: bolder;
+            letter-spacing: 1px;
+            color: var(--color1);
+            margin-top: 15px;
+            margin-left: 18px;
+        }
+
+        .smalltitle2 {
+            color: var(--color2);
+        }
+
+        .smalltitle3 {
+            color: var(--color3);
+        }
+
+        .smalltext {
+            font-size: 14px;
+            color: var(--color4);
+            margin-top: 5px;
+            margin-bottom: 40px;
+            margin-left: 18px;
+        }
+
+        .picsize2 {
+            height: 480px;
+        }
+
+        .picsize3 {
+            height: 290px;
+        }
+
+        .picsize4 {
+            height: 456px;
+        }
+
+        .picsize5 {
+            height: 230px;
+        }
+
+        .picsize6 {
+            height: 263px;
+        }
+
+        .picsize7 {
+            height: 500px;
+        }
+
+        .picsize8 {
+            height: 260px;
+        }
+
+        .picsize9 {
+            height: 260px;
+        }
+
+        .picsize10 {
+            height: 325px;
+        }
+
+        .picsize11 {
+            height: 400px;
+        }
+
+        .picsize12 {
+            height: 312px;
+        }
+
+        .menuintro {
+
+            margin: 0 auto;
+            height: 440px;
+            overflow: hidden;
+        }
+
+        .menuleft {
+            display: inline-block;
+            width: 282px;
+            height: 100%;
+
+        }
+
+        .menupic {
+            width: 282px;
+            height: 318px;
+            border-bottom-left-radius: 110px;
+            background-color: white;
+        }
+
+        .menulefttext {
+            font-size: 22px;
+            color: white;
+            display: block;
+            text-align: right;
+            margin-top: 70px;
+        }
+
+        .menuleftbottom {
+            width: 282px;
+        }
+
+        .sociallinktiny {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border-radius: 10px;
+            background-color: white;
+            float: right;
+            margin-top: 12px;
+            margin-left: 8px;
+        }
+
+
+        .menuright {
+            display: inline-block;
+            margin-left: 90px;
+            width: 610px;
+            height: 100%;
+        }
+
+        .menuright .name {
+            font-size: 22px;
+            color: white;
+            letter-spacing: 1px;
+        }
+
+        .menuright .textbig {
+            font-size: 16px;
+            letter-spacing: 2px;
+            color: white;
+            line-height: 30px;
+            margin-top: 22px;
+        }
+
+        .menuright .textsmall {
+            font-size: 14px;
+            letter-spacing: 3px;
+            color: white;
+            line-height: 28px;
+            font-weight: 100;
+            margin-top: 32px;
+        }
+
+        .softwarefooter span {
+            font-size: 20px;
+            color: white;
+            display: block;
+            margin-top: 34px;
+        }
+
+        .software {
+            width: 50px;
+            height: 50px;
+            background-color: white;
+            display: inline-block;
+            margin-top: 20px;
+            margin-right: 12px;
+        }
+
+        .innertitle{
+            font-size: 24px;
+            letter-spacing: 1px;
+            margin-bottom: 30px;
+            color: var(--color1);
+        }
+
+        .innerpic{
+            height: 400px;
+            background-color: rgb(156, 156, 156);
+            margin-bottom: 30px;
+        }
+
+        .word{
+            margin-bottom: 30px;
+            line-height: 26px;
+            letter-spacing: 1px;
+            text-align: justify;
+        }
+
+
+    </style>
+
+
+
+
+</head>
+
+<body class="demo-6">
+    <div class="leftbox">
+        <div class="pic"></div>
+        <div class="title">Yuting Liao</div>
+        <div class="worklink">
+            <a class="worklink1" href="http://">Web Design</a>
+            <a class="worklink2" href="http://">Graphic Design</a>
+            <a class="worklink3" href="http://">Animation</a>
+
+        </div>
+
+        <div class="social">
+            <div class="sociallink link1"></div>
+            <div class="sociallink link2"></div>
+            <div class="sociallink link3"></div>
+        </div>
+        <div class="bottomline"></div>
+        <div class="footertext">Yuting Liao | 20190125</div>
+    </div>
+    </a>
+    <div class="rightbox" id="main">
+        <div class="container sceneElement" data-viewport="1">
+            <div class="innertitle">Here is your title</div>
+            <div class="innerpic"></div>
+            <div class="word">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem ab nesciunt quia ex non voluptatem
+                alias, officia officiis magnam, debitis dolorum repudiandae quod est a pariatur mollitia odio quae
+                voluptatibus commodi obcaecati suscipit vitae maxime? Laboriosam dicta sed ab laborum, magnam omnis
+                dolores possimus harum mollitia labore in vero inventore tempore accusantium earum facilis ad cupiditate
+                quia eveniet rem iusto obcaecati. Fuga vel est aut commodi atque. Odit obcaecati adipisci suscipit a
+                recusandae repellendus, provident asperiores modi delectus voluptatibus! Optio suscipit cumque quasi
+                ipsa. Iste perspiciatis accusantium in deserunt laudantium laborum unde, quaerat blanditiis? Animi
+                officia ipsam rem repudiandae corporis autem libero ipsum dolorum minima consectetur, id iure sapiente
+                temporibus soluta tenetur adipisci iusto aspernatur blanditiis dolorem, sequi earum perferendis!
+                Eveniet, magni! Praesentium nihil beatae incidunt enim velit voluptas optio doloribus voluptatibus fuga
+                cupiditate. Officiis, magnam ipsum, totam mollitia minima sed asperiores reprehenderit praesentium eaque
+                perspiciatis quas, dolorem voluptatum vel. Quaerat sed eveniet quam sequi at illo. Corrupti explicabo
+                reprehenderit expedita accusantium. Vel in perspiciatis impedit molestiae quidem mollitia accusamus illo
+                optio enim, fugit reiciendis maxime laboriosam. Sint soluta incidunt, at magnam doloribus cumque ut in,
+                praesentium tenetur aut accusamus, accusantium iste assumenda. Commodi saepe accusamus odit libero
+                dolore ullam illum qui exercitationem quae odio amet rerum necessitatibus similique sit, laboriosam
+               
+            </div>
+            <div class="innerpic"></div>
+        </div>
+
+        <div class="intro hamburger hamburger--demo-6">About Me</div>
+
+
+
+        <!-- test -->
+        <main class="main main--demo-6">
+            <div class="content content--demo-6">
+                <div class="global-menu">
+                    <div class="global-menu__wrap">
+                        <div class="menuintro">
+                            <div class="menuleft global-menu__item global-menu__item--demo-6">
+                                <div class="menupic"></div>
+                                <div class="menuleftbottom">
+                                    <span class="menulefttext">Yuting Liao</span>
+                                    <div class="sociallinktiny"></div>
+                                    <div class="sociallinktiny"></div>
+                                    <div class="sociallinktiny"></div>
+                                </div>
+                            </div>
+                            <div class="menuright global-menu__item global-menu__item--demo-6">
+                                <div class="name">廖昱婷 1996/11/12</div>
+                                <div class="textbig">國立彰化女子高級中學<br>國立台中教育大學 文化創意產業設計與營運學系</div>
+                                <div class="textsmall">彰化出生，在臺中求學。<br>從國中開始對繪圖與書籍製作有相當的興趣，製作與自費印刷書籍是我求學階段中的重要愛好。
+                                    大學學習編排設計，喜歡將資訊呈現在各類版面上，而接觸Motion媒材後對於編排加入動態效果的結合感到著迷。<br>目前正在持續進修網頁與動畫效果中。</div>
+
+                                <div class="softwarefooter">
+                                    <span>相關技能</span>
+                                    <div class="software"></div>
+                                    <div class="software"></div>
+                                    <div class="software"></div>
+                                    <div class="software"></div>
+                                    <div class="software"></div>
+                                    <div class="software"></div>
+                                    <div class="software"></div>
+                                    <div class="software"></div>
+                                    <div class="software"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <div class="closebottom global-menu__item global-menu__item--demo-6 hamburger hamburger--demo-6 is-opened-navi">×</div> -->
+
+
+                    </div>
+                </div>
+                <svg class="shape-overlays" viewBox="0 0 100 100" preserveAspectRatio="none">
+                    <defs>
+                        <linearGradient id="gradient1" x1="0%" y1="0%" x2="0%" y2="100%">
+                            <stop offset="0%" stop-color="#00c99b" />
+                            <stop offset="100%" stop-color="#ff0ea1" />
+                        </linearGradient>
+                        <linearGradient id="gradient2" x1="0%" y1="0%" x2="0%" y2="100%">
+                            <stop offset="0%" stop-color="#ffd392" />
+                            <stop offset="100%" stop-color="#ff3898" />
+                        </linearGradient>
+                        <linearGradient id="gradient3" x1="0%" y1="0%" x2="0%" y2="100%">
+                            <stop offset="0%" stop-color="#FF7474" />
+                            <stop offset="100%" stop-color="#FF7474" />
+                        </linearGradient>
+                    </defs>
+
+                    <path class="shape-overlays__path"></path>
+                    <path class="shape-overlays__path"></path>
+                    <path class="shape-overlays__path"></path>
+                </svg>
+            </div>
+        </main>
+        <script src="js/demo.js"></script>
+        <script src="js/easings.js"></script>
+        <script src="js/demo6.js"></script>
+
+
+
+    </div>
+    <!-- test -->
+
+
+
+
+
+    <script>
+        $('.grid').masonry({
+            itemSelector: '.grid-item',
+            columnWidth: 440
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+.container2{
+    width: 70%;
+    max-width: 800px;
+    margin: auto;
+    margin-top: 80px;
+
+}
+
+.innertitle {
+    font-size: 32px;
+    letter-spacing: 1px;
+    margin-bottom: 30px;
+    font-family: 'Noto Sans TC';
+    font-weight: 600;
+}
+
+.innertitle2 {
+    color: rgb(58, 58, 58)
+}
+
+.innerpic {
+    height: 400px;
+    background-color: rgb(156, 156, 156);
+    margin-bottom: 30px;
+    overflow: hidden;
+}
+
+.word {
+    margin-bottom: 30px;
+    line-height: 30px;
+    letter-spacing: 1px;
+    text-align: justify;
+    font-size: 16px;
+    font-weight: 300;
+    font-family: 'Noto Sans TC';
+}
+
+img{
+    max-width: 100%;
+    margin-bottom: 30px;
+}
+
+.footer{
+    height: 30px;
+}
