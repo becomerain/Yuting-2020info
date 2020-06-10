@@ -32,6 +32,7 @@ body {
     border-radius: 80px;
     background-color: white;
     margin: auto;
+    background-image: url(../img/pf02.png);
 }
 
 .leftbox .title {
@@ -307,9 +308,10 @@ body {
 
 .menupic {
     width: 282px;
-    height: 318px;
+    height: 285px;
     border-bottom-left-radius: 110px;
     background-color: white;
+    background-image: url(../img/pf01.png);
 }
 
 .menulefttext {
